@@ -1,3 +1,6 @@
+//https://dev-smsinbox.gupshup.io/dashboard/metabase/question/392
+//https://dev-smsinbox.gupshup.io/dashboard/metabase/question/393
+
 // var templateList = require('./Template-Applist.json')
 var templateList = require('./dummy.json')
 var api = require('./api.js')
@@ -24,8 +27,8 @@ daybefore.setDate(today.getDate() - 2);
 var findTemplateListAndUpdate = function() {
     let count = 0
     templateList.forEach(async(ele)=>{
-        if(ele.App_ID && (ele.Modified_On <= daybefore)){
-            resp = await api.updateTemplateStatus(ele.App_ID)
+        if(ele.AppID && (ele.ModifiedOn <= daybefore)){
+            resp = await api.updateTemplateStatus(ele.AppID)
             if(resp == "success"){
                 console.log(response)
                 count = count + 1
